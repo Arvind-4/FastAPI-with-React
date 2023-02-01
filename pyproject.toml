@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Arvind-4 <lordarvindthegamer@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.79.0"
+uvicorn = "^0.18.2"
+passlib = "^1.7.4"
+cryptography = "^37.0.4"
+openpyxl = "^3.0.10"
+python-jose = "^3.3.0"
+pymongo = {extras = ["srv"], version = "^4.2.0"}
+python-multipart = "^0.0.5"
+python-dotenv = "^0.20.0"
+pydantic = {extras = ["email"], version = "^1.9.1"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
