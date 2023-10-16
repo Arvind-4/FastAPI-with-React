@@ -1,3 +1,3 @@
-const baseUrl = (process.env.VITE_API_URL || 'http://localhost:3000') as string;
+const baseUrl = (process.env.VITE_API_URL || 'http://localhost:8000') as string;
 
 export { baseUrl };
