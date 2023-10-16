@@ -1,20 +1,51 @@
-version: '3.7'
+version: '3.8'
+
 services: 
-  api:
-    container_name: api
+
+  db:
+    container_name: mongodb-fastapi
+    image: mongo:latest
+    init: true
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    env_file:
+      - ./.env
+    volumes:
+      - ./commands/mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
+      - ./.mongodb-data:/data/db/
+
+  backend:
+    container_name: backend
     build: 
       context: .
-      dockerfile: ./backend/Dockerfile
+      dockerfile: ./apps/docker/backend/Dockerfile
     restart: always
+    env_file:
+      - ./.env
     ports:
       - "8000:8000"
+
   nginx:
     depends_on: 
-    - api
+    - backend
     container_name: ngnix
     build: 
       context: .
-      dockerfile: ./frontend/Dockerfile
+      dockerfile: ./apps/docker/nginx/Dockerfile
     ports: 
       - "80:80"
     restart: always
+
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: ./apps/docker/frontend/Dockerfile
+    volumes:
+      - node_modules:/app/frontend/node_modules
+    ports:
+      - 3000:3000
+
+volumes:
+  node_modules:
