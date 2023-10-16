@@ -10,10 +10,12 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+package-lock.json
 downloads/
 eggs/
 .eggs/
 lib/
+poetry.lock
 lib64/
 parts/
 sdist/
@@ -120,6 +122,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+include/
 *.local
 .idea
 .DS_Store
@@ -128,3 +131,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+lib64
