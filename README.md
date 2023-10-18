@@ -1,71 +1,53 @@
+# Dokcare:
 
-# FastAPI with React 
+A Basic Setup of **FastAPI** as a backend with **React** on the Frontend and **Mongodb** for Backend with **Docker** Setup.
 
-A Basic Setup of FastAPI with React on the Frontend and Mongo DB for Backend with Docker Setup.
+## 📦 Tech Stack:
 
-## Tech Stack:
+- [FastAPI](https://fastapi.tiangolo.com/)  - FastAPI framework, high performance, easy to learn, fast to code, ready for production.
+- [Mongo DB](https://www.mongodb.com)  - Build the next big thing.
+- [React Js](https://reactjs.org)  - A JavaScript library for building user interfaces.
+- [Carbon Design System](https://carbondesignsystem.com/)  - Carbon is IBM’s open source design system for products and digital experiences.
+- [Docker](https://www.docker.com/)  - Docker is a platform designed to help developers build, share, and run modern applications. We handle the tedious setup, so you can focus on the code.
 
--   [FastAPI](https://fastapi.tiangolo.com/)  - FastAPI framework, high performance, easy to learn, fast to code, ready for production.
--   [Mongo DB](https://www.mongodb.com)  - Build the next big thing.
--   [React Js](https://reactjs.org)  - A JavaScript library for building user interfaces.
--   [Carbon Design System](https://carbondesignsystem.com/)  - Carbon is IBM’s open source design system for products and digital experiences.
--   [Docker](https://www.docker.com/)  - Docker is a platform designed to help developers build, share, and run modern applications. We handle the tedious setup, so you can focus on the code.
+## Getting Started: 
 
+- Clone Repo 
 
-## Get Started
-
-Cloning The Repo:
 ```bash
-$ mkdir ~/Dev/fastapi-react
-$ cd ~/Dev/fastapi-react
-$ git clone https://github.com/Arvind-4/FastAPI-with-React .
-$ python3.9 -m virtualenv .
-$ source bin/activate
+cd /path/to/folder
+mkdir fastapi-react
+cd fastapi-react
+git clone https://github.com/Arvind-4/FastAPI-with-React .
+```  
+
+- Create a Virtual Environment
+
+```bash
+cd fastapi-react
+python3.10 -m venv .
+source bin/activate
 ```
 
-Create a **.env**:
+**For Windows use:** `.\Scripts\activate`
+
+- Install Dependencies
+
 ```bash
-$ touch ~/Dev/fastapi-react/.env
-$ cp -r .sample.env .env
+pip install -r apps/backend/requirements.txt
 ```
 
-Add Your Credentials to **.env**
+Add Your Environment variable to `.env`.
+ Refer `.sample.env` file.
 
-
-Run Backend Server
-```bash
-(fastapi-react) $ cd backend
-(fastapi-react) $ pip install -r requirements.txt
-(fastapi-react) $ bash run.sh
-```
-**For Windows use**
-```bash
-(fastapi-react) $ .\run.sh
-```
-<div align="center">
-<br/>
-<b>Or</b>
-<br/>
-</div>
+- Build Frontend
 
 ```bash
-(fastapi-react) $ uvicorn app.main:app --host 0.0.0.0 --port 8000
+cd /path/to/folder/fastapi-react
+npm i --prefix apps/frontend
 ```
 
-Run Frontend
+- Using Docker-Compose:
 ```bash
-(fastapi-react) $ cd frontend
-(fastapi-react) $ npm install
-(fastapi-react) $ npm run start
-```
-
-Build The Frontend
-```bash
-(fastapi-react) $ npm run build
-```
-
-
-Using Docker-Compose:
-```bash
-docker-compose up --build
+docker compose up --build
 ```
