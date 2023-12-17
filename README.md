@@ -1,4 +1,4 @@
-# Dokcare:
+# FastAPI with React:
 
 A Basic Setup of **FastAPI** as a backend with **React** on the Frontend and **Mongodb** for Backend with **Docker** Setup.
 
